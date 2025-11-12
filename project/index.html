@@ -2,67 +2,69 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New and Trending</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New and Trending</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body class="bg-black text-white font-sans">
-    <!-- Navbar -->
-    <nav class="flex items-center justify-between px-16 py-6">
-        <div class="flex items-center gap-2">
-            <img src="./images/logo.png" alt="Logo" class="w-20 object-contain cursor-pointer" />
-        </div>
-
-        <!-- Search -->
-        <div class="flex-1 max-w-2xl mx-12 relative">
-            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-                <img src="./images/icon_search.png" alt="">
-            </span>
-            <input type="text" placeholder="Search for games"
-                class="w-full bg-[#3B3B3B] text-white placeholder-gray-400 rounded-md pl-12 pr-4 py-2 outline-none focus:ring-2 focus:ring-gray-700" />
-        </div>
-
-        <!-- Links -->
-        <div class="space-x-8 text-sm font-medium">
-            <a href="#" class="hover:text-gray-400 transition">Home</a>
-            <a href="#" class="hover:text-gray-400 transition">My Favorites</a>
-        </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="px-24 mt-12">
-        <h1 class="text-5xl font-bold tracking-tight">New and trending</h1>
-        <p class="text-gray-400 mt-3 text-base">
-            Based on player counts and release date
-        </p>
-    </header>
-
-    <!-- Filters -->
-    <div class="flex px-24 gap-4 mt-8 mb-16">
-        <select
-            class="bg-[#3B3B3B] text-white text-sm rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-gray-600">
-            <option>Order by: genre</option>
-        </select>
-
-        <select
-            class="bg-[#3B3B3B] text-white text-sm rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-gray-600">
-            <option>Platforms</option>
-        </select>
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-16 py-6">
+    <div class="flex items-center gap-2">
+      <img src="./images/logo.png" alt="Logo" class="w-20 object-contain cursor-pointer" />
     </div>
 
-    <!-- Card Games -->
-    <div id="card-games" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 md:px-12 lg:px-20 w-full max-w-7xl mx-auto">
+    <!-- Search -->
+    <div class="flex-1 max-w-2xl mx-12 relative">
+      <span class="absolute left-3 top-1/2 transform -translate-y-1/2 flex items-center justify-center">
+        <img src="./images/icon_search.png" alt="search icon" class="w-5 h-5 opacity-70">
+      </span>
+      <input id="search-input" type="text" placeholder="Search for games"
+        class="w-full bg-[#3B3B3B] text-white placeholder-gray-400 rounded-md pl-12 pr-4 py-2 outline-none focus:ring-2 focus:ring-gray-700" />
     </div>
 
-    <!-- Load More Button -->
-    <div class="flex justify-center mt-12 mb-16">
-        <button id="load-more" class="px-6 py-3 bg-[#2D2D2D] text-[#818181] font-semibold rounded-lg shadow-md hover:bg-[#3B3B3B] focus:outline-none focus:ring-2 focus:ring-opacity-75 cursor-pointer">
-            Load More
-        </button>
+    <!-- Links -->
+    <div class="space-x-8 text-sm font-medium">
+      <a href="#" class="hover:text-gray-400 transition">Home</a>
+      <a href="#" class="hover:text-gray-400 transition">My Favorites</a>
     </div>
+  </nav>
 
-    <script src="script.js"></script>
+  <!-- Header -->
+  <header class="px-24 mt-12">
+    <h1 class="text-5xl font-bold tracking-tight">New and trending</h1>
+    <p class="text-gray-400 mt-3 text-base">
+      Based on player counts and release date
+    </p>
+  </header>
+
+  <!-- Filters -->
+  <div class="flex px-24 gap-4 mt-8 mb-16">
+    <select id="filter-genre"
+      class="bg-[#3B3B3B] text-white text-sm rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-gray-600">
+      <option value="">Order by: genre</option>
+    </select>
+
+    <select id="filter-platform"
+      class="bg-[#3B3B3B] text-white text-sm rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-gray-600">
+      <option value="">Platforms</option>
+    </select>
+  </div>
+
+  <!-- Card Games -->
+  <div id="card-games"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 md:px-12 lg:px-20 w-full max-w-7xl mx-auto">
+  </div>
+
+  <!-- Load More Button -->
+  <div class="flex justify-center mt-12 mb-16">
+    <button id="load-more"
+      class="px-6 py-3 bg-[#2D2D2D] text-[#818181] font-semibold rounded-lg shadow-md hover:bg-[#3B3B3B] focus:outline-none focus:ring-2 focus:ring-opacity-75 cursor-pointer">
+      Load More
+    </button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
