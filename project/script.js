@@ -50,6 +50,19 @@ function populateFilters(games) {
   });
 }
 
+function addToFavorites(game) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  // Avoid duplicates
+  if (!favorites.some(f => f.id === game.id)) {
+    favorites.push(game);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    alert(`${game.name} added to favorites!`);
+  } else {
+    alert(`${game.name} is already in favorites.`);
+  }
+}
+
 function renderGames() {
   cardGames.innerHTML = "";
 
@@ -74,12 +87,17 @@ function renderGames() {
         <p class="text-gray-400 text-sm mb-2">⭐ ${game.rating}</p>
         <div class="flex justify-between items-center text-sm text-gray-400">
           <div class="flex gap-2">
-            <button class="bg-gray-700 text-gray-300 px-3 py-1 rounded-lg hover:bg-gray-600">Detail</button>
-            <button class="bg-gray-700 text-gray-300 px-3 py-1 rounded-lg hover:bg-gray-600">Favorite</button>
+            <button class="detail-btn bg-gray-700 text-gray-300 px-3 py-1 rounded-lg hover:bg-gray-600">Detail</button>
+            <button class="favorite-btn bg-gray-700 text-gray-300 px-3 py-1 rounded-lg hover:bg-gray-600">Favorite</button>
           </div>
         </div>
       </div>
     `;
+
+    // Add Favorite button action
+    const favoriteBtn = card.querySelector(".favorite-btn");
+    favoriteBtn.addEventListener("click", () => addToFavorites(game));
+
     cardGames.appendChild(card);
   }
 
